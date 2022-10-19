@@ -51,8 +51,8 @@ const Resume = (props) => {
   //here we have
   const programmingSkillsDetails = [
     { skill: "JavaScript", ratingPercentage: 100 },
-    { skill: "React JS", ratingPercentage:  100 },
-    { skill: "React Native", ratingPercentage:  100 },
+    { skill: "React JS", ratingPercentage: 100 },
+    { skill: "React Native", ratingPercentage: 100 },
     { skill: "Node JS", ratingPercentage: 100 },
     { skill: "Python", ratingPercentage: 100 },
     { skill: "HTML", ratingPercentage: 100 },
@@ -67,13 +67,21 @@ const Resume = (props) => {
         "A Portfolio website to showcase my skills and projects in one place.",
       subHeading: "Resources used: React JS, Bootstrap",
     },
+    {
+      title: "Test",
+      duration: { fromDate: "2022", toDate: "2022" },
+      description: "Test",
+      subHeading: "Test",
+    },
   ];
 
   const resumeDetails = [
     <div className="resume-screen-container" key="education">
       <ResumeHeading
         heading={"University of Toronto, Canada"}
-        subHeading={"BACHELOR OF SCIENCE BIOINFORMATICS \n (DATA SCIENCE FOR GENOMICS)"}
+        subHeading={
+          "BACHELOR OF SCIENCE BIOINFORMATICS \n (DATA SCIENCE FOR GENOMICS)"
+        }
         fromDate={"2021"}
         toDate={"Current"}
       />
@@ -200,7 +208,10 @@ const Resume = (props) => {
       id={props.id || ""}
     >
       <div className="resume-content">
-        <ScreenHeading title={"Resume"} subHeading={"My Experience and Background"} />
+        <ScreenHeading
+          title={"Resume"}
+          subHeading={"My Experience and Background"}
+        />
         <div className="resume-card">
           <div className="resume-bullets">
             <div className="bullet-container">
