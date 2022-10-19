@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+import Footer from "../../PortfolioContainer/footer/Footer";
 import imgBack from "../../../src/images/mailz.jpeg";
 import load1 from "../../../src/images/load2.gif";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
@@ -16,7 +17,7 @@ export default function ContactMe(props) {
   };
 
   const fadeInSubscription =
-ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -102,6 +103,7 @@ ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
           </form>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
