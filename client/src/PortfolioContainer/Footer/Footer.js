@@ -4,7 +4,8 @@ import ScrollService from "../../utilities/ScrollService";
 export default function Footer() {
   return (
     <div className="scroll-container">
-      <button>
+      <button
+      >
         <i>test</i>
       </button>
     </div>

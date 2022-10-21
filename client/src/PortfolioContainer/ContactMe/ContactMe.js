@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-import Footer from "../../PortfolioContainer/footer/Footer";
+// import Footer from "../../PortfolioContainer/Footer/Footer";
 import imgBack from "../../../src/images/mailz.jpeg";
 import load1 from "../../../src/images/load2.gif";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
@@ -103,7 +103,6 @@ export default function ContactMe(props) {
           </form>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

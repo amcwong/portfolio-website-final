@@ -99,20 +99,47 @@ const Resume = (props) => {
         <ResumeHeading
           heading={"TeacherOn"}
           subHeading={"Computer Science and Math Tutor"}
+          fromDate={"May 2022"}
+          toDate={"Present"}
+        />
+        {/* <div className="experience-description">
+          <span className="resume-description-text">asdf</span>
+        </div>
+        <div className="experience-description">
+          <span className="resume-description-text">asdf</span>
+          <br />
+          <span className="resume-description-text">asdf</span>
+          <br />
+          <span className="resume-description-text">asdf</span>
+          <br />
+        </div> */}
+      </div>
+      <div className="experience-container">
+        <ResumeHeading
+          heading={"Ashbury MSOE Center for Biomolecular Modeling"}
+          subHeading={"Protein Modeling Team Member"}
+          fromDate={"Sep 2018"}
+          toDate={"May 2020"}
+        />
+        
+      </div>
+      <div className="experience-container">
+        <ResumeHeading
+          heading={"AcadeCap International School"}
+          subHeading={"Science and Technology Camp Leader"}
           fromDate={"2022"}
           toDate={"Present"}
         />
-        <div className="experience-description">
-          <span className="resume-description-text">asdf</span>
-        </div>
-        <div className="experience-description">
-          <span className="resume-description-text">asdf</span>
-          <br />
-          <span className="resume-description-text">asdf</span>
-          <br />
-          <span className="resume-description-text">asdf</span>
-          <br />
-        </div>
+        
+      </div>
+      <div className="experience-container">
+        <ResumeHeading
+          heading={"City of Ottawa"}
+          subHeading={"Swimming Instructor and Lifeguard"}
+          fromDate={"2022"}
+          toDate={"Present"}
+        />
+        
       </div>
     </div>,
 
