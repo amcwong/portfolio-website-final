@@ -44,12 +44,20 @@ export default function Profile() {
             </span>
           </div>
           <div className="profile-options">
-            <button className="btn primary-btn" onClick={() => ScrollService.scrollHandler.scrollToHireMe()}>
+            <button
+              className="btn primary-btn"
+              onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
+            >
               Contact Me
             </button>
             <a href="Wong.pdf" download="Andrew Wong.pdf">
               <button className="btn highlighted-btn">Get Resume</button>
             </a>
+            {/* <div>
+              <a href="https://www.linkedin.com/in/andrew-wong-a8859a241/">
+                <i className="fa fa-linkedin"></i>
+              </a>
+            </div> */}
           </div>
         </div>
         <div className="profile-picture">
