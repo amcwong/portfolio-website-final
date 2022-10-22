@@ -66,7 +66,7 @@ const Resume = (props) => {
       description:
         "A Portfolio website to showcase my skills and projects in one place.",
       subHeading:
-        "Relevant Technologies: React JS, Bootstrap, Node.js, Express.js",
+        "Relevant Technologies: React JS, Bootstrap, Node.js, Express.js, Heroku",
     },
     {
       title: "Auto Dresser",
