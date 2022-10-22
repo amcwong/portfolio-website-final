@@ -62,16 +62,33 @@ const Resume = (props) => {
   const projectsDetails = [
     {
       title: "Personal Portfolio Website",
-      duration: { fromDate: "2022", toDate: "2022" },
+      duration: { fromDate: " 2022", toDate: "2022" },
       description:
         "A Portfolio website to showcase my skills and projects in one place.",
-      subHeading: "Resources used: React JS, Bootstrap",
+      subHeading:
+        "Relevant Technologies: React JS, Bootstrap, Node.js, Express.js",
     },
     {
-      title: "Test",
-      duration: { fromDate: "2022", toDate: "2022" },
-      description: "Test",
-      subHeading: "Test",
+      title: "Auto Dresser",
+      duration: { fromDate: "Oct 2021", toDate: "Nov 2021" },
+      description:
+        "Developed a Python program to, from a list of phone numbers, text subscribers what type of clothes they should wear that day according to the weather in their area.",
+      subHeading:
+        "Relevant Technologies: Python, Python requests, Python Anywhere",
+    },
+    {
+      title: "CheckMate",
+      duration: { fromDate: "Jun 2022", toDate: "Current" },
+      description:
+        "A React Native application called CheckMate: a Tinder analogue that aims to connect and direct users looking for in-person chess.",
+      subHeading: "Relevant Technologies: React Native, Figma",
+    },
+    {
+      title: "University of Toronto Course Enroller",
+      duration: { fromDate: "Sep 2022", toDate: "Oct 2022" },
+      description:
+        "A Python based executable program which utilizes Selenium Webdriver and ChromeDriver to automatically enroll students in non-waitlistable courses.",
+      subHeading: "Relevant Technologies: Python, Selenium",
     },
   ];
 
@@ -80,7 +97,7 @@ const Resume = (props) => {
       <ResumeHeading
         heading={"University of Toronto, Canada"}
         subHeading={
-          "BACHELOR OF SCIENCE BIOINFORMATICS \n (DATA SCIENCE FOR GENOMICS)"
+          "BACHELOR OF SCIENCE BIOINFORMATICS (DATA SCIENCE FOR GENOMICS)"
         }
         fromDate={"2021"}
         toDate={"Current"}
@@ -121,7 +138,6 @@ const Resume = (props) => {
           fromDate={"Sep 2018"}
           toDate={"May 2020"}
         />
-        
       </div>
       <div className="experience-container">
         <ResumeHeading
@@ -130,7 +146,6 @@ const Resume = (props) => {
           fromDate={"2022"}
           toDate={"Present"}
         />
-        
       </div>
       <div className="experience-container">
         <ResumeHeading
@@ -139,7 +154,6 @@ const Resume = (props) => {
           fromDate={"2022"}
           toDate={"Present"}
         />
-        
       </div>
     </div>,
 
@@ -177,9 +191,18 @@ const Resume = (props) => {
     </div>,
     //   Interests
     <div className="resume-screen-container" key="interests">
-      <ResumeHeading heading="Teaching" description="asdf" />
-      <ResumeHeading heading="Chess" description="asdf" />
-      <ResumeHeading heading="Nutrition" description="asdf" />
+      <ResumeHeading
+        heading="Teaching"
+        description="As someone who was initially dissuaded from pursuing programming because of a poor teacher, I sincerely enjoy making the learning experience enjoyable. I continue to tutor on the side as a university student and, outside of academics, have taught Tae Kwon Do and chess."
+      />
+      <ResumeHeading
+        heading="Chess"
+        description="Playing chess is like synthesizing the excitement of a full soccer match in 5 minutes. To engage in as much chess as I can I play for the University of Toronto's Blitz team, and managed the chess club at Ashbury College."
+      />
+      <ResumeHeading
+        heading="Health and Wellness"
+        description="The reason why I started programming was because my physical health problems prevented me from doing physical activity. I have overcome many hurdles by accounting for my health in every decision I make throughout the day!"
+      />
     </div>,
   ];
   const handleCarousel = (index) => {
