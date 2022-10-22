@@ -10,13 +10,11 @@ export default function Profile() {
         <div className="profile-details">
           <div className="profile-details-name">
             <span className="primary-text">
-              {" "}
               Hello, I'm <span className="highlighted-text">Andrew</span>
             </span>
           </div>
           <div className="profile-details-role">
             <span className="primary-text">
-              {" "}
               <h1>
                 <TypeAnimation
                   sequence={[

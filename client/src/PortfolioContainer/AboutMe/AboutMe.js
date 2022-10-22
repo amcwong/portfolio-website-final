@@ -21,11 +21,11 @@ export default function AboutMe(props) {
       bullets: [
         "Full Stack web and mobile development",
         "React and React Native",
-        "REST API Building",
         "Database Management",
         "Quality Assurance",
+        "REST API Building",
       ],
-      heading: "Here are a Few Highlights:",
+      heading: "Here are my fields of interest:",
     },
   };
 
@@ -62,8 +62,7 @@ export default function AboutMe(props) {
                 className="btn primary-btn"
                 onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
               >
-                {" "}
-                Contact Me{" "}
+                Contact Me
               </button>
               <a href="Andrew.pdf" download="Andrew Wong.pdf">
                 <button className="btn highlighted-btn">Get Resume</button>
