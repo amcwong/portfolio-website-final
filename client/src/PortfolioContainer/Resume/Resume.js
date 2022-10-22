@@ -276,5 +276,4 @@ const Resume = (props) => {
     </div>
   );
 };
-
 export default Resume;
