@@ -143,15 +143,15 @@ const Resume = (props) => {
         <ResumeHeading
           heading={"AcadeCap International School"}
           subHeading={"Science and Technology Camp Leader"}
-          fromDate={"2022"}
-          toDate={"Present"}
+          fromDate={"Jun 2022"}
+          toDate={"Aug 2022"}
         />
       </div>
       <div className="experience-container">
         <ResumeHeading
           heading={"City of Ottawa"}
           subHeading={"Swimming Instructor and Lifeguard"}
-          fromDate={"2022"}
+          fromDate={"2019-2021"}
           toDate={"Present"}
         />
       </div>
