@@ -25,6 +25,7 @@ export default function ContactMe(props) {
   const [banner, setBanner] = useState("");
   const [bool, setBool] = useState(false);
 
+  // Sets name, email, and message variables after change in input
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -34,8 +35,9 @@ export default function ContactMe(props) {
   const handleMessage = (e) => {
     setMessage(e.target.value);
   };
-  // console.log(name);
+
   const submitForm = async (e) => {
+    // Prevent default does not permit form data to be sent if event not handled
     e.preventDefault();
     try {
       let data = {
@@ -76,6 +78,7 @@ export default function ContactMe(props) {
             <h4>Send Your Email Here!</h4>
             <img src={imgBack} />
           </div>
+          {/* when form element is submitted run async event */}
           <form onSubmit={submitForm}>
             <p>{banner}</p>
             <label htmlFor="name">Name</label>
