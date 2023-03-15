@@ -1,5 +1,7 @@
 // https://stackoverflow.com/questions/70374005/invalid-options-object-dev-server-has-been-initialized-using-an-options-object
 // This is how middle ware is being routed if problems can depreciate and put below into client's package.json and try
+
+// Start app in dev mode with npm run dev
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
