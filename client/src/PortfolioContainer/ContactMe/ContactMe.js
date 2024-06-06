@@ -16,7 +16,7 @@ export default function ContactMe(props) {
     Animations.animations.fadeInScreen(props.id);
   };
 
-    const fadeInSubscription =
+  const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   const [name, setName] = useState("");
@@ -46,7 +46,16 @@ export default function ContactMe(props) {
         message,
       };
       setBool(true);
-      const res = await axios.post(`/contact`, data);
+
+      // For local
+      // const res = await axios.post(`/contact`, data);
+
+
+      // For production
+      const res = await axios.post(
+        `${process.env.REACT_APP_API_URL}/contact`,
+        data
+      );
       if (name.length === 0 || email.length === 0 || message.length === 0) {
         setBanner(res.data.msg);
         toast.error(res.data.msg);
@@ -76,7 +85,7 @@ export default function ContactMe(props) {
         <div className="back-form">
           <div className="img-back">
             <h4>Send Your Email Here!</h4>
-            <img src={imgBack} />
+            <img src={imgBack} alt="background" />
           </div>
           {/* when form element is submitted run async event */}
           <form onSubmit={submitForm}>
@@ -96,7 +105,7 @@ export default function ContactMe(props) {
                 <i className="fa fa-paper-plane" />
                 {bool ? (
                   <b className="load">
-                    <img src={load1} />
+                    <img src={load1} alt="loading" />
                   </b>
                 ) : (
                   ""
