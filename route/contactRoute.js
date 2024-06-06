@@ -36,14 +36,13 @@ router.post("/contact", (req, res) => {
             `,
   };
 
-  smtpTransporter.sendMail(mailOptions, (error) => {
-    try {
-      if (error)
-        return res.status(400).json({ msg: "Please Fill All The Fields!" });
-      res.status(200).json({ msg: "Thank You For Contacting Andrew." });
-    } catch (error) {
-      if (error) return res.status(500).json({ msg: "There is server error" });
+  smtpTransporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error("Error sending email:", error);
+      return res.status(400).json({ msg: "Failed to send email." });
     }
+    console.log("Email sent:", info.response);
+    res.status(200).json({ msg: "Thank You For Contacting Andrew." });
   });
 });
 
