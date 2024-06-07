@@ -48,13 +48,13 @@ export default function ContactMe(props) {
       setBool(true);
 
       // For local
-      // const res = await axios.post(`/contact`, data);
+      const res = await axios.post(`/contact`, data);
 
       // For production
-      const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/contact`,
-        data
-      );
+      // const res = await axios.post(
+      //   `${process.env.REACT_APP_API_URL}/contact`,
+      //   data
+      // );
 
       if (name.length === 0 || email.length === 0 || message.length === 0) {
         setBanner(res.data.msg);

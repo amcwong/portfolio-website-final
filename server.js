@@ -5,6 +5,7 @@
 // For server deployment this would require different start and build information depending on the hosting service
 
 const express = require("express");
+const cors = require("cors");
 const formData = require("form-data");
 const Mailgun = require("mailgun.js");
 require("dotenv").config();
@@ -13,10 +14,31 @@ const app = express();
 const router = express.Router();
 const mailgun = new Mailgun(formData);
 const mg = mailgun.client({
-  username: 'api',
+  username: "api",
   key: process.env.MAILGUN_API_KEY,
 });
 
+// Define CORS options
+const corsOptions = {
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps, curl requests)
+    if (!origin) return callback(null, true);
+
+    const allowedOrigins = [
+      "http://localhost:3000", // Local development URL
+      "https://amcwong.onrender.com", // Production URL
+    ];
+
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 router.post("/contact", (req, res) => {
@@ -41,7 +63,8 @@ router.post("/contact", (req, res) => {
     `,
   };
 
-  mg.messages.create(process.env.MAILGUN_DOMAIN, data)
+  mg.messages
+    .create(process.env.MAILGUN_DOMAIN, data)
     .then((msg) => {
       console.log(msg);
       res.status(200).json({ msg: "Thank You For Contacting Andrew." });
@@ -58,7 +81,6 @@ const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
-
 
 // Old Express App
 // Load environment variables from .env file
