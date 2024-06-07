@@ -18,23 +18,8 @@ const mg = mailgun.client({
   key: process.env.MAILGUN_API_KEY,
 });
 
-// Define CORS options
 const corsOptions = {
-  origin: (origin, callback) => {
-    // Allow requests with no origin (like mobile apps, curl requests)
-    if (!origin) return callback(null, true);
-
-    const allowedOrigins = [
-      "http://localhost:3000", // Local development URL
-      "https://amcwong.onrender.com", // Production URL
-    ];
-
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: "https://amcwong.onrender.com/",
   optionsSuccessStatus: 200,
 };
 
@@ -71,11 +56,18 @@ router.post("/contact", (req, res) => {
     })
     .catch((error) => {
       console.error("Error sending email:", error);
-      res.status(500).json({ msg: "Failed to send email." });
+      res
+        .status(500)
+        .json({ msg: "Failed to send email.", error: error.message });
     });
 });
 
 app.use("/", router);
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
