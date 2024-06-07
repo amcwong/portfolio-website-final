@@ -19,7 +19,7 @@ const mg = mailgun.client({
 });
 
 const corsOptions = {
-  origin: "https://amcwong.onrender.com/",
+  origin: "https://amcwong.onrender.com",
   optionsSuccessStatus: 200,
 };
 
