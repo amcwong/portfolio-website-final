@@ -5,6 +5,7 @@
 // For server deployment this would require different start and build information depending on the hosting service
 
 const express = require("express");
+const cors = require("cors");
 const formData = require("form-data");
 const Mailgun = require("mailgun.js");
 require("dotenv").config();
@@ -13,10 +14,16 @@ const app = express();
 const router = express.Router();
 const mailgun = new Mailgun(formData);
 const mg = mailgun.client({
-  username: 'api',
+  username: "api",
   key: process.env.MAILGUN_API_KEY,
 });
 
+const corsOptions = {
+  origin: "https://amcwong.onrender.com/",
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 router.post("/contact", (req, res) => {
@@ -41,24 +48,31 @@ router.post("/contact", (req, res) => {
     `,
   };
 
-  mg.messages.create(process.env.MAILGUN_DOMAIN, data)
+  mg.messages
+    .create(process.env.MAILGUN_DOMAIN, data)
     .then((msg) => {
       console.log(msg);
       res.status(200).json({ msg: "Thank You For Contacting Andrew." });
     })
     .catch((error) => {
       console.error("Error sending email:", error);
-      res.status(500).json({ msg: "Failed to send email." });
+      res
+        .status(500)
+        .json({ msg: "Failed to send email.", error: error.message });
     });
 });
 
 app.use("/", router);
 
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
+
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
-
 
 // Old Express App
 // Load environment variables from .env file
