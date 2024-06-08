@@ -159,3 +159,15 @@ button .load img {
     font-size: 16px;
   }
 }
+
+.email-link p {
+  color: #ffffff;
+}
+
+/* .email-link a {
+  text-decoration: none; 
+} */
+
+.email-link a:hover {
+  text-decoration: underline;
+}
