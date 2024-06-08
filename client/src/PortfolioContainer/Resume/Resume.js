@@ -155,14 +155,14 @@ const Resume = (props) => {
           toDate={"Mar 2021"}
         />
       </div>
-      <div className="experience-container">
+      {/* <div className="experience-container">
         <ResumeHeading
           heading={"Ashbury MSOE Center for Biomolecular Modeling"}
           subHeading={"Protein Modeling Team Member"}
           fromDate={"Sep 2018"}
           toDate={"May 2019"}
         />
-      </div>
+      </div> */}
     </div>,
     // Programming skills
     <div
