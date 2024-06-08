@@ -55,7 +55,7 @@ export default function Header() {
       currentScreenSubscription.unsubscribe();
     };
   }, [currentScreenSubscription]);
-  
+
   return (
     <div
       className="header-container"
@@ -69,7 +69,7 @@ export default function Header() {
           <FontAwesomeIcon className="header-hamburger-bars" icon={faBars} />
         </div>
         <div className="header-logo">
-          <span>Andrew</span>
+          <span>Welcome!</span>
         </div>
         <div
           className={

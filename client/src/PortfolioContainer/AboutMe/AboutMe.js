@@ -13,19 +13,19 @@ export default function AboutMe(props) {
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   const SCREEN_CONSTSANTS = {
-    description:
-      `Full stack web and mobile developer with proficiency in MERN stack technologies. 
-      Whether it is in research, medicine, or technology, my professional interests are grounded in improving quality of life. 
-      I sincerely enjoy the work I do, and aim to find others who share my enthusiasm.`,
+    description: `I'm a passionate developer who enjoys playing chess, rock climbing, and nature watching!
+      Whether it is in research, medicine, or tech, my professional interests are grounded in improving quality of life. 
+      I take great pride in my work and am always eager to collaborate with like-minded individuals who share my enthusiasm for making a positive impact. 
+      Let's build something amazing together!`,
     highlights: {
       bullets: [
-        "Full Stack web and mobile development",
-        "React and React Native",
-        "Database Management",
-        "Quality Assurance",
-        "REST API Building",
+        "Full Stack Web Development",
+        "API Development and Integration",
+        "Mobile Development with React Native",
+        "Database Management with SQL",
+        "Machine Learning and Data Visualization",
       ],
-      heading: "Here are my fields of interest:",
+      heading: "Here are some fields I have experience in:",
     },
   };
 
@@ -64,7 +64,7 @@ export default function AboutMe(props) {
               >
                 Contact Me
               </button>
-              <a href="Andrew.pdf" download="Andrew Wong.pdf">
+              <a href="Andrew Wong CV.pdf" download="Andrew Wong CV.pdf">
                 <button className="btn highlighted-btn">Get Resume</button>
               </a>
             </div>

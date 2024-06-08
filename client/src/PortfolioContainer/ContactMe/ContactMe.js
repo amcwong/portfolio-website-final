@@ -51,17 +51,16 @@ export default function ContactMe(props) {
       // const res = await axios.post(`/contact`, data);
 
       // For production
-      // const res = await axios.post(
-      //   `${process.env.REACT_APP_API_URL}/contact`,
-      //   data
-      // );
-
-      // Hard Coded Production Environment Variable
       const res = await axios.post(
-        `https://portfolio-website-final.onrender.com/contact`,
+        `${process.env.REACT_APP_API_URL}/contact`,
         data
       );
-      
+
+      // Hard Coded Production Environment Variable
+      // const res = await axios.post(
+      //   `https://portfolio-website-final.onrender.com/contact`,
+      //   data
+      // );
 
       if (name.length === 0 || email.length === 0 || message.length === 0) {
         setBanner(res.data.msg);
@@ -120,6 +119,12 @@ export default function ContactMe(props) {
               </button>
             </div>
           </form>
+        </div>
+        <div className="email-link">
+          <p>
+            Or reach me directly at:{" "}
+            <a href="mailto:andrew.wong8@icloud.com">andrew.wong8@icloud.com</a>
+          </p>
         </div>
       </div>
     </div>

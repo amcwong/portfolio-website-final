@@ -50,45 +50,48 @@ const Resume = (props) => {
 
   //here we have
   const programmingSkillsDetails = [
-    { skill: "JavaScript", ratingPercentage: 100 },
-    { skill: "React JS", ratingPercentage: 100 },
-    { skill: "React Native", ratingPercentage: 100 },
-    { skill: "Node JS", ratingPercentage: 100 },
     { skill: "Python", ratingPercentage: 100 },
-    { skill: "HTML", ratingPercentage: 100 },
-    { skill: "CSS", ratingPercentage: 100 },
+    { skill: "R", ratingPercentage: 100 },
+    { skill: "JavaScript", ratingPercentage: 100 },
+    { skill: "HTML and CSS", ratingPercentage: 100 },
+    { skill: "Java", ratingPercentage: 100 },
+    { skill: "Dart", ratingPercentage: 100 },
+    { skill: "SQL", ratingPercentage: 100 },
+    { skill: "Haskell", ratingPercentage: 100 },
+    { skill: "React JS", ratingPercentage: 100 },
+    { skill: "Node JS", ratingPercentage: 100 },
   ];
 
   const projectsDetails = [
     {
-      title: "Personal Portfolio Website",
-      duration: { fromDate: " 2022", toDate: "2022" },
+      title: "My Portfolio Website",
+      duration: { fromDate: "Sep 2022", toDate: "Jun 2024" },
       description:
-        "A Portfolio website to showcase my skills and projects in one place.",
+        "Launched this website on Render with a React frontend and Node.js backend to present my skills.",
       subHeading:
-        "Relevant Technologies: React JS, Bootstrap, Node.js, Express.js, Heroku",
-    },
-    {
-      title: "Auto Dresser",
-      duration: { fromDate: "Oct 2021", toDate: "Nov 2021" },
-      description:
-        "Developed a Python program to, from a list of phone numbers, text subscribers what type of clothes they should wear that day according to the weather in their area.",
-      subHeading:
-        "Relevant Technologies: Python, Python requests, Python Anywhere",
-    },
-    {
-      title: "CheckMate",
-      duration: { fromDate: "Jun 2022", toDate: "Current" },
-      description:
-        "A React Native application called CheckMate: a Tinder analogue that aims to connect and direct users looking for in-person chess.",
-      subHeading: "Relevant Technologies: React Native, Figma",
+        "Relevant Technologies: React JS, Bootstrap, Node.js, Express.js, CORS, MailGun",
     },
     {
       title: "University of Toronto Course Enroller",
       duration: { fromDate: "Sep 2022", toDate: "Oct 2022" },
       description:
-        "A Python based executable program which utilizes Selenium Webdriver and ChromeDriver to automatically enroll students in non-waitlistable courses.",
+        "A Python-based executable program which utilizes Selenium Webdriver and ChromeDriver to automatically enroll students in non-waitlistable courses.",
       subHeading: "Relevant Technologies: Python, Selenium",
+    },
+    {
+      title: "CheckMate",
+      duration: { fromDate: "Jun 2022", toDate: "Current" },
+      description:
+        "CheckMate is a Tinder analogue that aims to connect and direct users looking for in-person chess.",
+      subHeading: "Relevant Technologies: React Native, Figma",
+    },
+    {
+      title: "Auto Dresser",
+      duration: { fromDate: "Oct 2021", toDate: "Nov 2021" },
+      description:
+        "Developed a Python program using PythonAnywhere to text subscribers of a mailing service what type of clothes they should wear that day according to the weather in their area.",
+      subHeading:
+        "Relevant Technologies: Python, OpenWeatherMap API, Twilio API, PythonAnywhere",
     },
   ];
 
@@ -97,7 +100,7 @@ const Resume = (props) => {
       <ResumeHeading
         heading={"University of Toronto, Canada"}
         subHeading={
-          "BACHELOR OF SCIENCE BIOINFORMATICS (DATA SCIENCE FOR GENOMICS)"
+          "BACHELOR OF SCIENCE IN BIOINFORMATICS AND COMPUTER SCIENCE"
         }
         fromDate={"2021"}
         toDate={"Current"}
@@ -114,29 +117,26 @@ const Resume = (props) => {
     <div className="resume-screen-container" key="work-experience">
       <div className="experience-container">
         <ResumeHeading
-          heading={"TeacherOn"}
-          subHeading={"Computer Science and Math Tutor"}
-          fromDate={"May 2022"}
-          toDate={"Present"}
+          heading={"Victoria University"}
+          subHeading={"Undergraduate Researcher in Machine Learning"}
+          fromDate={"Jan 2024"}
+          toDate={"Current"}
         />
-        {/* <div className="experience-description">
-          <span className="resume-description-text">asdf</span>
-        </div>
-        <div className="experience-description">
-          <span className="resume-description-text">asdf</span>
-          <br />
-          <span className="resume-description-text">asdf</span>
-          <br />
-          <span className="resume-description-text">asdf</span>
-          <br />
-        </div> */}
       </div>
       <div className="experience-container">
         <ResumeHeading
-          heading={"Ashbury MSOE Center for Biomolecular Modeling"}
-          subHeading={"Protein Modeling Team Member"}
-          fromDate={"Sep 2018"}
-          toDate={"May 2020"}
+          heading={"Factors Education"}
+          subHeading={"Software Engineering Intern"}
+          fromDate={"Sep 2022"}
+          toDate={"Oct 2023"}
+        />
+      </div>
+      <div className="experience-container">
+        <ResumeHeading
+          heading={"TeacherOn"}
+          subHeading={"Computer Science and Math Tutor"}
+          fromDate={"May 2022"}
+          toDate={"Current"}
         />
       </div>
       <div className="experience-container">
@@ -151,12 +151,19 @@ const Resume = (props) => {
         <ResumeHeading
           heading={"City of Ottawa"}
           subHeading={"Swimming Instructor and Lifeguard"}
-          fromDate={"2019-2021"}
-          toDate={"Present"}
+          fromDate={"Sep 2019"}
+          toDate={"Mar 2021"}
+        />
+      </div>
+      <div className="experience-container">
+        <ResumeHeading
+          heading={"Ashbury MSOE Center for Biomolecular Modeling"}
+          subHeading={"Protein Modeling Team Member"}
+          fromDate={"Sep 2018"}
+          toDate={"May 2019"}
         />
       </div>
     </div>,
-
     // Programming skills
     <div
       className="resume-screen-container programming-skills-container"
@@ -197,11 +204,11 @@ const Resume = (props) => {
       />
       <ResumeHeading
         heading="Chess"
-        description="Playing chess is like synthesizing the excitement of a full soccer match in 5 minutes. To engage in as much chess as I can I play for the University of Toronto's Blitz team, and managed the chess club at Ashbury College."
+        description="I love chess! To engage in as much chess as I can I play for the University of Toronto's Blitz team. I also started the chess club at Ashbury College."
       />
       <ResumeHeading
-        heading="Health and Wellness"
-        description="The reason why I started programming was because my physical health problems prevented me from doing physical activity. I have overcome many hurdles by accounting for my health in every decision I make throughout the day!"
+        heading="Rock Climbing"
+        description="Rock climbing is the first sport I got super involved with after I overcame some bad health problems. My health problems still prevent me from getting my heart rate too high. Luckily, rock climbing is not too cardio intensive!"
       />
     </div>,
   ];

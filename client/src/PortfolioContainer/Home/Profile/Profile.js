@@ -18,15 +18,19 @@ export default function Profile() {
               <h1>
                 <TypeAnimation
                   sequence={[
-                    "Web Developer",
+                    "ReactJS",
                     1500,
-                    "React Native",
-                    1500,
-                    "NodeJS",
+                    "Node.js",
                     1500,
                     "MERN Stack",
                     1500,
-                    "Firebase",
+                    "AWS",
+                    1500,
+                    "Machine Learning",
+                    1500,
+                    "Python Development",
+                    1500,
+                    "Data Visualization",
                     1500,
                   ]}
                   wrapper="div"
@@ -48,7 +52,7 @@ export default function Profile() {
             >
               Contact Me
             </button>
-            <a href="Wong.pdf" download="Andrew Wong.pdf">
+            <a href="Andrew Wong CV.pdf" download="Andrew Wong CV.pdf">
               <button className="btn highlighted-btn">Get Resume</button>
             </a>
             {/* <div>
