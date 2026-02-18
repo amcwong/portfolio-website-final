@@ -90,11 +90,11 @@ export default function ContactMe(props) {
         </div>
         <div className="back-form">
           <div className="img-back">
-            <h4>Send Your Email Here!</h4>
+            <h4>Reach me directly via email!</h4>
             <img src={imgBack} alt="background" />
           </div>
           {/* when form element is submitted run async event */}
-          <form onSubmit={submitForm}>
+          {/* <form onSubmit={submitForm}>
             <p>{banner}</p>
             <label htmlFor="name">Name</label>
             <input type="text" onChange={handleName} value={name} />
@@ -118,7 +118,7 @@ export default function ContactMe(props) {
                 )}
               </button>
             </div>
-          </form>
+          </form> */}
         </div>
         <div className="email-link">
           <p>
