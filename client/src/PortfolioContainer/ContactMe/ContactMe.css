@@ -1,12 +1,11 @@
 .main-container {
   min-height: 100vh;
-
   margin: 100px 0 -450px 0;
 }
 
 .central-form {
   max-width: 1100px;
-  padding: 10px;
+  padding: 32px 24px;
   display: flex;
   box-shadow: 0 0px 20px -2px #1f2235;
   border-radius: 12px;
@@ -16,158 +15,60 @@
   background-color: #1f2235;
 }
 
-.central-form h2 {
-  color: #fff;
-  font-family: "Poppins Bold";
-  letter-spacing: 0.2rem;
-  margin-bottom: 20px;
-}
-
-.back-form {
-  max-width: 380px;
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 720px;
+  width: 100%;
   margin: 0 auto;
 }
 
-.back-form .img-back {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.img-back h4 {
-  letter-spacing: 0.3rem;
-  font-weight: 400;
-  color: white;
-  font-size: 18px;
-  opacity: 0.5;
-}
-
-.back-form .img-back img {
-  width: 100%;
-  opacity: 0.5;
-}
-
-.central-form form {
-  width: auto;
-  box-shadow: 0 0 2px 1px white;
+.social-link-card {
   display: flex;
-  color: #111;
-  padding: 15px;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: -52px;
-  opacity: 0.9;
-  background-color: white;
-  box-shadow: 0 0px 20px -2px #1f2235;
-  border-radius: 12px;
-}
-
-form p {
-  text-align: center;
-  margin-bottom: 10px;
-  color: #ff5823;
-  letter-spacing: 0.1rem;
-  font-family: "Poppins Bold";
-}
-
-form label {
-  margin-bottom: 5px;
-  color: #111;
-  letter-spacing: 0.2rem;
-}
-
-form input,
-textarea {
-  width: 100%;
-  border: 2px solid rgba(0, 0, 0, 0);
-  outline: none;
-  background-color: rgba(230, 230, 230, 0.6);
-  padding: 0.5rem 1rem;
-  font-size: 1.1rem;
-  margin-bottom: 22px;
-  transition: 0.3s;
-  border-radius: 10px;
-}
-
-textarea:focus {
-  border: 2px solid rgba(30, 85, 250, 0.47);
-  background-color: #fff;
-}
-form input:focus {
-  border: 2px solid rgba(30, 85, 250, 0.47);
-  background-color: #fff;
-}
-
-form button {
-  margin-top: 15px;
-  padding: 5px;
-  outline: none;
-  width: 900px;
-  color: rgb(230, 227, 227);
-  border: 2px solid #ff5823;
-  font-size: 12px;
-  border-radius: 19px;
-  background-color: #1f2235;
-  font-size: 18px;
-  width: 160px;
   align-items: center;
-  justify-content: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.2s ease, background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
-form button:hover {
-  background-color: #1f2235;
-  transition: all ease 1s;
-  border: 2px solid #1f2235;
-}
-
-button .load {
-  width: 100%;
-}
-
-button .load img {
-  width: 60px;
-  color: green;
-}
-.col i {
-  padding: 7px;
+.social-link-card:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 88, 35, 0.18);
+  border-color: #ff5823;
+  text-decoration: none;
   color: #fff;
 }
-.col i:hover {
-  transform: scale(1.5);
+
+.social-link-card i {
+  font-size: 22px;
+  width: 28px;
+  text-align: center;
+  color: #ff5823;
 }
 
-@media screen and (min-width: 940px) {
-  .back-form {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-  }
-
-  .img-back {
-    flex: 1;
-    align-self: center;
-    margin-right: 20px;
-  }
-
-  form {
-    flex: 0.9;
-  }
-}
-@media screen and (max-width: 414px) {
-  .central-form h2 {
-    font-size: 16px;
-  }
+.social-link-card span {
+  font-family: "Poppins SemiBold";
+  font-size: 16px;
+  letter-spacing: 0.04rem;
 }
 
-.email-link p {
-  color: #ffffff;
+.social-link-card:last-child {
+  grid-column: 1 / -1;
 }
 
-/* .email-link a {
-  text-decoration: none; 
-} */
+@media screen and (max-width: 767px) {
+  .main-container {
+    margin: 80px 16px -200px 16px;
+  }
 
-.email-link a:hover {
-  text-decoration: underline;
+  .social-links {
+    grid-template-columns: 1fr;
+  }
 }

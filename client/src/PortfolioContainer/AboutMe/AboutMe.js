@@ -58,12 +58,9 @@ export default function AboutMe(props) {
               {renderHighlight()}
             </div>
             <div className="about-me-options">
-              <button
-                className="btn primary-btn"
-                onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
-              >
-                Contact Me
-              </button>
+              <a href="mailto:andrew.wong8@icloud.com">
+                <button className="btn primary-btn">Contact Me</button>
+              </a>
               <a href="Andrew Wong CV.pdf" download="Andrew Wong CV.pdf">
                 <button className="btn highlighted-btn">Get Resume</button>
               </a>

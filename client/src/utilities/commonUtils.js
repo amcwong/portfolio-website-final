@@ -18,6 +18,7 @@ export const TOTAL_SCREENS = [
   },
   {
     screen_name: "ContactMe",
+    display_name: "Links",
     component: ContactMe,
   },
 ];

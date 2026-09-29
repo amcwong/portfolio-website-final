@@ -26,6 +26,8 @@ const Resume = (props) => {
             <div className="heading-date">
               {props.fromDate + "-" + props.toDate}
             </div>
+          ) : props.fromDate ? (
+            <div className="heading-date">{props.fromDate}</div>
           ) : (
             <div></div>
           )}
@@ -36,12 +38,24 @@ const Resume = (props) => {
         <div className="resume-heading-description">
           <span>{props.description ? props.description : ""}</span>
         </div>
+        {props.link ? (
+          <div className="resume-heading-link">
+            <a
+              href={props.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {props.linkLabel || "View on GitHub"}
+            </a>
+          </div>
+        ) : null}
       </div>
     );
   };
 
   const resumeBullets = [
     { label: "Education", logoSrc: "education.svg" },
+    { label: "Awards", logoSrc: "education.svg" },
     { label: "Work History", logoSrc: "work-history.svg" },
     { label: "Programming Skills", logoSrc: "programming-skills.svg" },
     { label: "Projects", logoSrc: "projects.svg" },
@@ -79,96 +93,154 @@ const Resume = (props) => {
       subHeading: "Relevant Technologies: Python, Selenium",
     },
     {
-      title: "CheckMate",
-      duration: { fromDate: "Jun 2022", toDate: "Current" },
+      title: "endoSignatureR",
       description:
-        "CheckMate is a Tinder analogue that aims to connect and direct users looking for in-person chess.",
-      subHeading: "Relevant Technologies: React Native, Figma",
+        "A small-sample, leakage-safe R pipeline for discovering interpretable gene signatures from bulk RNA-seq endometrial lesion data (two-group setting), with classification, nested CV training, and a Shiny app.",
+      subHeading: "Relevant Technologies: R, Bioconductor, limma, Shiny",
+      link: "https://github.com/amcwong/endoSignatureR",
     },
     {
-      title: "Auto Dresser",
-      duration: { fromDate: "Oct 2021", toDate: "Nov 2021" },
+      title: "amcw-claude-code-workflow",
       description:
-        "Developed a Python program using PythonAnywhere to text subscribers of a mailing service what type of clothes they should wear that day according to the weather in their area.",
-      subHeading:
-        "Relevant Technologies: Python, OpenWeatherMap API, Twilio API, PythonAnywhere",
+        "A ready-to-fork Claude Code template for academics using LaTeX/Beamer and R, with multi-agent review, quality gates, adversarial QA, and a Quarto course-notes publishing loop.",
+      subHeading: "Relevant Technologies: Claude Code, Quarto, LaTeX, R",
+      link: "https://github.com/amcwong/amcw-claude-code-workflow",
+    },
+    {
+      title: "daily-obsidian-vault",
+      description:
+        "A reusable Obsidian vault configuration for daily journaling, tldr-first reference notes, and life-organization workflows you can fork and adapt.",
+      subHeading: "Relevant Technologies: Obsidian, Templater, Markdown",
+      link: "https://github.com/amcwong/daily-obsidian-vault",
     },
   ];
 
   const resumeDetails = [
     <div className="resume-screen-container" key="education">
+      <h3 className="resume-mobile-section-title">Education</h3>
       <ResumeHeading
-        heading={"University of Toronto, Canada"}
-        subHeading={
-          "BACHELOR OF SCIENCE IN BIOINFORMATICS AND COMPUTER SCIENCE"
-        }
-        fromDate={"2021"}
-        toDate={"Current"}
+        heading={"University of Toronto"}
+        subHeading={"Master of Science in Applied Computing — AI in Healthcare"}
+        fromDate={"Sep 2026"}
+        toDate={"Present"}
       />
       <ResumeHeading
-        heading={"Ashbury College"}
-        subHeading={"INTERNATIONAL BACCALAUREATE DIPLOMA"}
+        heading={"University of Toronto"}
+        subHeading={
+          "Bachelor of Science in Bioinformatics and Computer Science (cGPA 3.85/4.00)"
+        }
+        fromDate={"Sep 2021"}
+        toDate={"Jun 2026"}
+      />
+    </div>,
+
+    <div className="resume-screen-container" key="awards">
+      <h3 className="resume-mobile-section-title">Awards</h3>
+      <ResumeHeading
+        heading={"Mitacs Accelerate Research Fellowship"}
+        subHeading={"Ontario Institute for Studies in Education (OISE)"}
+        description={
+          "Awarded a $120,000 Mitacs Accelerate grant supporting AI research in partnership with Factors Education and OISE."
+        }
+        fromDate={"Apr 2025"}
+        toDate={"Jun 2026"}
+      />
+      <ResumeHeading
+        heading={"Vic Global Scholarship"}
+        subHeading={"Victoria University, University of Toronto"}
+        description={
+          "Received a $2,000 Vic Global scholarship to present research methodology and outcomes at the Lisbon Scientonomy Workshop 2024."
+        }
+        fromDate={"2024"}
+      />
+      <ResumeHeading
+        heading={"Merit Award Scholarship"}
+        subHeading={"Ashbury College"}
+        description={
+          "Approximately $20,000 per year; received each year from 2017 to 2021."
+        }
         fromDate={"2017"}
         toDate={"2021"}
       />
     </div>,
 
     // Work experience
-    <div className="resume-screen-container" key="work-experience">
+    <div
+      className="resume-screen-container work-history-container"
+      key="work-experience"
+    >
+      <h3 className="resume-mobile-section-title">Work History</h3>
       <div className="experience-container">
         <ResumeHeading
-          heading={"Victoria University"}
-          subHeading={"Undergraduate Researcher in Machine Learning"}
-          fromDate={"Jan 2024"}
-          toDate={"Current"}
+          heading={"OISE, University of Toronto"}
+          subHeading={"AI Developer — Mitacs Accelerate Research Fellowship"}
+          fromDate={"Apr 2025"}
+          toDate={"Jun 2026"}
+        />
+      </div>
+      <div className="experience-container">
+        <ResumeHeading
+          heading={"Fable Therapeutics"}
+          subHeading={"Machine Learning Scientist Intern"}
+          fromDate={"Sep 2025"}
+          toDate={"May 2026"}
+        />
+      </div>
+      <div className="experience-container">
+        <ResumeHeading
+          heading={"Woodin Lab, University of Toronto"}
+          subHeading={"Undergraduate Researcher in Computational Neuroscience"}
+          fromDate={"Sep 2024"}
+          toDate={"Jun 2025"}
         />
       </div>
       <div className="experience-container">
         <ResumeHeading
           heading={"Factors Education"}
-          subHeading={"Software Engineering Intern"}
+          subHeading={"Software Engineer"}
+          fromDate={"May 2024"}
+          toDate={"Sep 2024"}
+        />
+      </div>
+      <div className="experience-container">
+        <ResumeHeading
+          heading={"Victoria University"}
+          subHeading={"Undergraduate Researcher in Natural Language Processing"}
+          fromDate={"Jan 2024"}
+          toDate={"May 2024"}
+        />
+      </div>
+      <div className="experience-container">
+        <ResumeHeading
+          heading={"Factors Education"}
+          subHeading={"Software Developer Intern"}
           fromDate={"Sep 2022"}
-          toDate={"Oct 2023"}
+          toDate={"Sep 2023"}
         />
       </div>
       <div className="experience-container">
         <ResumeHeading
           heading={"TeacherOn"}
           subHeading={"Computer Science and Math Tutor"}
-          fromDate={"May 2022"}
-          toDate={"Current"}
+          fromDate={"May 2021"}
+          toDate={"Jun 2025"}
         />
       </div>
       <div className="experience-container">
         <ResumeHeading
-          heading={"AcadeCap International School"}
-          subHeading={"Science and Technology Camp Leader"}
-          fromDate={"Jun 2022"}
-          toDate={"Aug 2022"}
-        />
-      </div>
-      <div className="experience-container">
-        <ResumeHeading
-          heading={"City of Ottawa"}
-          subHeading={"Swimming Instructor and Lifeguard"}
-          fromDate={"Sep 2019"}
-          toDate={"Mar 2021"}
-        />
-      </div>
-      {/* <div className="experience-container">
-        <ResumeHeading
-          heading={"Ashbury MSOE Center for Biomolecular Modeling"}
-          subHeading={"Protein Modeling Team Member"}
+          heading={"Ashbury MSOE SMART Team"}
+          subHeading={"Student Researcher, Biomolecular Modeling"}
           fromDate={"Sep 2018"}
           toDate={"May 2019"}
         />
-      </div> */}
+      </div>
     </div>,
     // Programming skills
     <div
       className="resume-screen-container programming-skills-container"
       key="programming-skills"
     >
+      <h3 className="resume-mobile-section-title">Programming Skills</h3>
       {programmingSkillsDetails.map((skill, index) => (
         <div className="skill-parent" key={index}>
           <div className="heading-bullet"></div>
@@ -184,20 +256,23 @@ const Resume = (props) => {
     </div>,
 
     //   Projects
-    <div className="resume-screen-container" key="projects">
-      {projectsDetails.map((projectsDetails, index) => (
+    <div className="resume-screen-container projects-container" key="projects">
+      <h3 className="resume-mobile-section-title">Projects</h3>
+      {projectsDetails.map((project, index) => (
         <ResumeHeading
           key={index}
-          heading={projectsDetails.title}
-          subHeading={projectsDetails.subHeading}
-          description={projectsDetails.description}
-          fromDate={projectsDetails.duration.fromDate}
-          toDate={projectsDetails.duration.toDate}
+          heading={project.title}
+          subHeading={project.subHeading}
+          description={project.description}
+          fromDate={project.duration?.fromDate}
+          toDate={project.duration?.toDate}
+          link={project.link}
         />
       ))}
     </div>,
     //   Interests
     <div className="resume-screen-container" key="interests">
+      <h3 className="resume-mobile-section-title">Interests</h3>
       <ResumeHeading
         heading="Teaching"
         description="As someone who was initially dissuaded from pursuing programming because of a poor teacher, I sincerely enjoy making the learning experience enjoyable. I continue to tutor on the side as a university student and, outside of academics, have taught Tae Kwon Do and chess."
@@ -213,7 +288,7 @@ const Resume = (props) => {
     </div>,
   ];
   const handleCarousel = (index) => {
-    let offsetHeight = 360;
+    let offsetHeight = 620;
 
     let newCarouselOffset = {
       style: { transform: "translateY(" + index * offsetHeight * -1 + "px)" },
