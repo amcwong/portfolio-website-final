@@ -17,19 +17,15 @@ export default function Profile() {
               <h1>
                 <TypeAnimation
                   sequence={[
-                    "ReactJS",
+                    "Agentic AI",
                     1500,
-                    "Node.js",
+                    "Applied Machine Learning",
                     1500,
-                    "MERN Stack",
+                    "Bioinformatics",
                     1500,
-                    "AWS",
+                    "Full-Stack Development",
                     1500,
-                    "Machine Learning",
-                    1500,
-                    "Python Development",
-                    1500,
-                    "Data Visualization",
+                    "Cloud Deployment",
                     1500,
                   ]}
                   wrapper="div"
