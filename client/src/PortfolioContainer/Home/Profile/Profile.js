@@ -48,7 +48,7 @@ export default function Profile() {
             <a href="mailto:andrew.wong8@icloud.com">
               <button className="btn primary-btn">Contact Me</button>
             </a>
-            <a href="Andrew Wong CV.pdf" download="Andrew Wong CV.pdf">
+            <a href="Andrew-MC-Wong-CV.pdf" download="Andrew-MC-Wong-CV.pdf">
               <button className="btn highlighted-btn">Get Resume</button>
             </a>
             {/* <div>
