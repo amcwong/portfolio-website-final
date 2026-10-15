@@ -15,15 +15,14 @@ export default function AboutMe(props) {
   const SCREEN_CONSTSANTS = {
     description: `I'm a passionate developer who enjoys playing chess, rock climbing, and nature watching!
       Whether it is in research, medicine, or tech, my professional interests are grounded in improving quality of life. 
-      I take great pride in my work and am always eager to collaborate with like-minded individuals who share my enthusiasm for making a positive impact. 
-      Let's build something amazing together!`,
+      I take great pride in my work and am always eager to collaborate with people who share my enthusiasm for making a positive impact.`,
     highlights: {
       bullets: [
+        "Agentic AI Development",
+        "Applied Machine Learning",
+        "Bioinformatics Pipelines",
         "Full Stack Web Development",
-        "API Development and Integration",
-        "Mobile Development with React Native",
-        "Database Management with SQL",
-        "Machine Learning and Data Visualization",
+        "Cloud Computing and Deployment",
       ],
       heading: "Here are some fields I have experience in:",
     },

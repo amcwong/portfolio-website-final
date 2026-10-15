@@ -59,7 +59,8 @@ const Resume = (props) => {
     { label: "Work History", logoSrc: "work-history.svg" },
     { label: "Programming Skills", logoSrc: "programming-skills.svg" },
     { label: "Projects", logoSrc: "projects.svg" },
-    { label: "Interests", logoSrc: "interests.svg" },
+    // Temporarily removed — restore Interests later
+    // { label: "Interests", logoSrc: "interests.svg" },
   ];
 
   //here we have
@@ -270,7 +271,7 @@ const Resume = (props) => {
         />
       ))}
     </div>,
-    //   Interests
+    /* Interests — temporarily removed; restore later
     <div className="resume-screen-container" key="interests">
       <h3 className="resume-mobile-section-title">Interests</h3>
       <ResumeHeading
@@ -286,6 +287,7 @@ const Resume = (props) => {
         description="Rock climbing is the first sport I got super involved with after I overcame some bad health problems. My health problems still prevent me from getting my heart rate too high. Luckily, rock climbing is not too cardio intensive!"
       />
     </div>,
+    */
   ];
   const handleCarousel = (index) => {
     let offsetHeight = 620;
