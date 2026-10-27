@@ -57,24 +57,88 @@ const Resume = (props) => {
     { label: "Education", logoSrc: "education.svg" },
     { label: "Awards", logoSrc: "education.svg" },
     { label: "Work History", logoSrc: "work-history.svg" },
-    { label: "Programming Skills", logoSrc: "programming-skills.svg" },
+    { label: "Technical Skills", logoSrc: "programming-skills.svg" },
     { label: "Projects", logoSrc: "projects.svg" },
     // Temporarily removed — restore Interests later
     // { label: "Interests", logoSrc: "interests.svg" },
   ];
 
-  //here we have
   const programmingSkillsDetails = [
-    { skill: "Python", ratingPercentage: 100 },
-    { skill: "R", ratingPercentage: 100 },
-    { skill: "JavaScript", ratingPercentage: 100 },
-    { skill: "HTML and CSS", ratingPercentage: 100 },
-    { skill: "Java", ratingPercentage: 100 },
-    { skill: "Dart", ratingPercentage: 100 },
-    { skill: "SQL", ratingPercentage: 100 },
-    { skill: "Haskell", ratingPercentage: 100 },
-    { skill: "React JS", ratingPercentage: 100 },
-    { skill: "Node JS", ratingPercentage: 100 },
+    {
+      category: "Languages",
+      skills: [
+        "Python",
+        "TypeScript",
+        "JavaScript",
+        "SQL",
+        "R",
+        "C",
+        "C++",
+        "Java",
+        "Haskell",
+        "Dart",
+      ],
+    },
+    {
+      category: "Machine Learning",
+      skills: [
+        "PyTorch",
+        "TensorFlow",
+        "Scikit-learn",
+        "Hugging Face",
+        "NumPy",
+        "Pandas",
+        "Braintrust",
+        "OpenAI",
+        "ChatGPT",
+      ],
+    },
+    {
+      category: "MLOps & Cloud",
+      skills: [
+        "AWS Lambda",
+        "AWS S3",
+        "AWS DynamoDB",
+        "AWS EC2",
+        "AWS Route 53",
+        "AWS Cognito",
+        "Docker",
+        "WandB",
+        "Pinecone",
+        "GitHub",
+        "Hydra",
+        "SLURM",
+      ],
+    },
+    {
+      category: "Web",
+      skills: [
+        "Next.js",
+        "React",
+        "Node.js",
+        "Express",
+        "FastAPI",
+        "PostgreSQL",
+        "Tailwind",
+        "HTML and CSS",
+        "REST APIs",
+        "Flutter",
+        "Streamlit",
+        "Deepgram",
+      ],
+    },
+    {
+      category: "Bioinformatics",
+      skills: [
+        "BLAST+",
+        "ANARCI",
+        "gemmi",
+        "AlphaFold",
+        "AbFold",
+        "Jmol",
+        "AutoCAD",
+      ],
+    },
   ];
 
   const projectsDetails = [
@@ -174,7 +238,7 @@ const Resume = (props) => {
       <div className="experience-container">
         <ResumeHeading
           heading={"OISE, University of Toronto"}
-          subHeading={"AI Developer — Mitacs Accelerate Research Fellowship"}
+          subHeading={"AI Developer | Mitacs Accelerate Research Fellowship"}
           fromDate={"Apr 2025"}
           toDate={"Jun 2026"}
         />
@@ -241,16 +305,16 @@ const Resume = (props) => {
       className="resume-screen-container programming-skills-container"
       key="programming-skills"
     >
-      <h3 className="resume-mobile-section-title">Programming Skills</h3>
-      {programmingSkillsDetails.map((skill, index) => (
-        <div className="skill-parent" key={index}>
-          <div className="heading-bullet"></div>
-          <span>{skill.skill}</span>
-          <div className="skill-percentage">
-            <div
-              style={{ width: skill.ratingPercentage + "%" }}
-              className="active-percentage-bar"
-            ></div>
+      <h3 className="resume-mobile-section-title">Technical Skills</h3>
+      {programmingSkillsDetails.map((group) => (
+        <div className="skill-group" key={group.category}>
+          <h4 className="skill-group-title">{group.category}</h4>
+          <div className="skill-list">
+            {group.skills.map((skill) => (
+              <span className="skill-chip" key={skill}>
+                {skill}
+              </span>
+            ))}
           </div>
         </div>
       ))}
