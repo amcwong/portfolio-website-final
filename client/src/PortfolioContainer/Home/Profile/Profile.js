@@ -19,11 +19,11 @@ export default function Profile() {
                   sequence={[
                     "Agentic AI",
                     1500,
-                    "Applied Machine Learning",
+                    "Machine Learning",
                     1500,
                     "Bioinformatics",
                     1500,
-                    "Full-Stack Development",
+                    "Full Stack",
                     1500,
                     "Cloud Deployment",
                     1500,
