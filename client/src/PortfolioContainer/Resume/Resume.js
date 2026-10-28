@@ -91,6 +91,7 @@ const Resume = (props) => {
         "Braintrust",
         "OpenAI",
         "ChatGPT",
+        "Claude Code",
       ],
     },
     {
