@@ -5,14 +5,19 @@ import Animations from "../../utilities/Animations";
 import "./AboutMe.css";
 
 export default function AboutMe(props) {
-  let fadeInScreenHandler = (screen) => {
-    if (screen.fadeInScreen !== props.id) return;
-    Animations.animations.fadeInScreen(props.id);
-  };
-  const fadeInSubscription =
-    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+  useEffect(() => {
+    const fadeInScreenHandler = (screen) => {
+      if (screen.fadeInScreen !== props.id) return;
+      Animations.animations.fadeInScreen(props.id);
+    };
 
-  const SCREEN_CONSTSANTS = {
+    const fadeInSubscription =
+      ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+
+    return () => fadeInSubscription.unsubscribe();
+  }, [props.id]);
+
+  const SCREEN_CONSTANTS = {
     description: `I'm a passionate developer who enjoys playing chess, rock climbing, and nature watching!
       Whether it is in research, medicine, or tech, my professional interests are grounded in improving quality of life. 
       I take great pride in my work and am always eager to collaborate with people who share my enthusiasm for making a positive impact.`,
@@ -29,7 +34,7 @@ export default function AboutMe(props) {
   };
 
   const renderHighlight = () => {
-    return SCREEN_CONSTSANTS.highlights.bullets.map((value, i) => (
+    return SCREEN_CONSTANTS.highlights.bullets.map((value, i) => (
       <div className="highlight" key={i}>
         <div className="highlight-blob"></div>
         <span>{value}</span>
@@ -48,11 +53,11 @@ export default function AboutMe(props) {
           <div className="about-me-profile"></div>
           <div className="about-me-details">
             <span className="about-me-description">
-              {SCREEN_CONSTSANTS.description}
+              {SCREEN_CONSTANTS.description}
             </span>
             <div className="about-me-highlights">
               <div className="highlight-heading">
-                <span>{SCREEN_CONSTSANTS.highlights.heading}</span>
+                <span>{SCREEN_CONSTANTS.highlights.heading}</span>
               </div>
               {renderHighlight()}
             </div>
