@@ -57,7 +57,7 @@ export default function AboutMe(props) {
               {renderHighlight()}
             </div>
             <div className="about-me-options">
-              <a href="mailto:amcwong8@gmail.com">
+              <a href="mailto:amcwong613@gmail.com">
                 <button className="btn primary-btn">Contact Me</button>
               </a>
               <a href="amcwong-resume.pdf" download="amcwong-resume.pdf">

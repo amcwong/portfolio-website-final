@@ -41,7 +41,7 @@ export default function Profile() {
             </span>
           </div>
           <div className="profile-options">
-            <a href="mailto:amcwong8@gmail.com">
+            <a href="mailto:amcwong613@gmail.com">
               <button className="btn primary-btn">Contact Me</button>
             </a>
             <a href="amcwong-resume.pdf" download="amcwong-resume.pdf">

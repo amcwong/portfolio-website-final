@@ -7,7 +7,7 @@ import "./ContactMe.css";
 const SOCIAL_LINKS = [
   {
     name: "Email",
-    href: "mailto:amcwong8@gmail.com",
+    href: "mailto:amcwong613@gmail.com",
     iconClass: "fa fa-envelope",
     external: false,
     wide: true,
