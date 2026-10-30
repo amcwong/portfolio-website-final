@@ -6,15 +6,16 @@ import "./ContactMe.css";
 
 const SOCIAL_LINKS = [
   {
+    name: "Email",
+    href: "mailto:amcwong8@gmail.com",
+    iconClass: "fa fa-envelope",
+    external: false,
+    wide: true,
+  },
+  {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/amcwong613",
     iconClass: "fa fa-linkedin",
-    external: true,
-  },
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/wong___andrew/",
-    iconClass: "fa fa-instagram",
     external: true,
   },
   {
@@ -24,16 +25,11 @@ const SOCIAL_LINKS = [
     external: true,
   },
   {
-    name: "Email",
-    href: "mailto:amcwong8@gmail.com",
-    iconClass: "fa fa-envelope",
-    external: false,
-  },
-  {
     name: "Course notes",
     href: "https://amcwong.github.io/amcw-claude-code-workflow/",
     iconClass: "fa fa-book",
     external: true,
+    wide: true,
   },
 ];
 
@@ -58,7 +54,7 @@ export default function ContactMe(props) {
           {SOCIAL_LINKS.map((link) => (
             <a
               key={link.name}
-              className="social-link-card"
+              className={`social-link-card${link.wide ? " social-link-card--wide" : ""}`}
               href={link.href}
               {...(link.external
                 ? { target: "_blank", rel: "noopener noreferrer" }

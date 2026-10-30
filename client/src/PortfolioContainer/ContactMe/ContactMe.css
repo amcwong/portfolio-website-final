@@ -59,7 +59,7 @@
   letter-spacing: 0.04rem;
 }
 
-.social-link-card:last-child {
+.social-link-card--wide {
   grid-column: 1 / -1;
 }
 
