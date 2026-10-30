@@ -23,7 +23,7 @@ router.post("/contact", (req, res) => {
 
   let mailOptions = {
     from: data.email,
-    to: "andrew.wong8@icloud.com",
+    to: "amcwong8@gmail.com",
     subject: `message from ${data.name}`,
     html: `
             <h3>Email Details<h3/>

@@ -35,7 +35,7 @@ router.post("/contact", (req, res) => {
 
   const data = {
     from: `Excited User <mailgun@${process.env.MAILGUN_DOMAIN}>`,
-    to: "andrew.wong8@icloud.com",
+    to: "amcwong8@gmail.com",
     subject: `Message from ${name}`,
     html: `
       <h3>Email Details</h3>

@@ -25,7 +25,7 @@ const SOCIAL_LINKS = [
   },
   {
     name: "Email",
-    href: "mailto:andrew.wong8@icloud.com",
+    href: "mailto:amcwong8@gmail.com",
     iconClass: "fa fa-envelope",
     external: false,
   },
