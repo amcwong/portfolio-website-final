@@ -4,7 +4,7 @@ My personal portfolio website. Contains a React frontend plus Express API (Mailg
 
 ## Stack
 
-- **Client:** Create React App (`client/`) — Home, About, Resume, Links
+- **Client:** Create React App (`client/`) — Home, About, Career, Links
 - **Server:** Express (`server.js`) — `POST /contact` via Mailgun (optional; unused in the live UI)
 - **Deploy:** Render — frontend as a **static site**, backend as a **web service**
 

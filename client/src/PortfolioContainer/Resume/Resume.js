@@ -52,7 +52,7 @@ const Resume = (props) => {
   const resumeBullets = [
     { label: "Education", logoSrc: "education.svg" },
     { label: "Awards", logoSrc: "education.svg" },
-    { label: "Work History", logoSrc: "work-history.svg" },
+    { label: "Work Experience", logoSrc: "work-history.svg" },
     { label: "Technical Skills", logoSrc: "programming-skills.svg" },
     { label: "Projects", logoSrc: "projects.svg" },
     // Temporarily removed — restore Interests later
@@ -247,7 +247,7 @@ const Resume = (props) => {
       className="resume-screen-container work-history-container"
       key="work-experience"
     >
-      <h3 className="resume-mobile-section-title">Work History</h3>
+      <h3 className="resume-mobile-section-title">Work Experience</h3>
       <div className="experience-container">
         <ResumeHeading
           heading={"OISE, University of Toronto"}
@@ -420,7 +420,7 @@ const Resume = (props) => {
     >
       <div className="resume-content">
         <ScreenHeading
-          title={"Resume"}
+          title={"Career"}
           subHeading={"My Experience and Background"}
         />
         <div className="resume-card">
