@@ -32,9 +32,20 @@ const Resume = (props) => {
             <div></div>
           )}
         </div>
-        <div className="resume-sub-heading">
-          <span>{props.subHeading ? props.subHeading : ""}</span>
-        </div>
+        {props.subHeading ? (
+          <div className="resume-sub-heading">
+            <span>{props.subHeading}</span>
+          </div>
+        ) : null}
+        {props.technologies?.length ? (
+          <div className="skill-list">
+            {props.technologies.map((skill) => (
+              <span className="skill-chip" key={skill}>
+                {skill}
+              </span>
+            ))}
+          </div>
+        ) : null}
         <div className="resume-heading-description">
           <span>{props.description ? props.description : ""}</span>
         </div>
@@ -144,35 +155,41 @@ const Resume = (props) => {
       duration: { fromDate: "Sep 2022", toDate: "Jun 2024" },
       description:
         "Launched this website on Render with a React frontend and Node.js backend to present my skills.",
-      subHeading:
-        "Relevant Technologies: React JS, Bootstrap, Node.js, Express.js, CORS, MailGun",
+      technologies: [
+        "React JS",
+        "Bootstrap",
+        "Node.js",
+        "Express.js",
+        "CORS",
+        "MailGun",
+      ],
     },
     {
       title: "University of Toronto Course Enroller",
       duration: { fromDate: "Sep 2022", toDate: "Oct 2022" },
       description:
         "A Python-based executable program which utilizes Selenium Webdriver and ChromeDriver to automatically enroll students in non-waitlistable courses.",
-      subHeading: "Relevant Technologies: Python, Selenium",
+      technologies: ["Python", "Selenium"],
     },
     {
       title: "endoSignatureR",
       description:
         "A small-sample, leakage-safe R pipeline for discovering interpretable gene signatures from bulk RNA-seq endometrial lesion data (two-group setting), with classification, nested CV training, and a Shiny app.",
-      subHeading: "Relevant Technologies: R, Bioconductor, limma, Shiny",
+      technologies: ["R", "Bioconductor", "limma", "Shiny"],
       link: "https://github.com/amcwong/endoSignatureR",
     },
     {
       title: "amcw-claude-code-workflow",
       description:
         "A ready-to-fork Claude Code template for academics using LaTeX/Beamer and R, with multi-agent review, quality gates, adversarial QA, and a Quarto course-notes publishing loop.",
-      subHeading: "Relevant Technologies: Claude Code, Quarto, LaTeX, R",
+      technologies: ["Claude Code", "Quarto", "LaTeX", "R"],
       link: "https://github.com/amcwong/amcw-claude-code-workflow",
     },
     {
       title: "daily-obsidian-vault",
       description:
         "A reusable Obsidian vault configuration for daily journaling, tldr-first reference notes, and life-organization workflows you can fork and adapt.",
-      subHeading: "Relevant Technologies: Obsidian, Templater, Markdown",
+      technologies: ["Obsidian", "Templater", "Markdown"],
       link: "https://github.com/amcwong/daily-obsidian-vault",
     },
   ];
@@ -340,8 +357,8 @@ const Resume = (props) => {
         <ResumeHeading
           key={index}
           heading={project.title}
-          subHeading={project.subHeading}
           description={project.description}
+          technologies={project.technologies}
           fromDate={project.duration?.fromDate}
           toDate={project.duration?.toDate}
           link={project.link}
