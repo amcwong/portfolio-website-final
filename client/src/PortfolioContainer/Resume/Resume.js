@@ -40,11 +40,7 @@ const Resume = (props) => {
         </div>
         {props.link ? (
           <div className="resume-heading-link">
-            <a
-              href={props.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={props.link} target="_blank" rel="noopener noreferrer">
               {props.linkLabel || "View on GitHub"}
             </a>
           </div>
@@ -182,22 +178,38 @@ const Resume = (props) => {
   ];
 
   const resumeDetails = [
-    <div className="resume-screen-container" key="education">
+    <div
+      className="resume-screen-container education-container"
+      key="education"
+    >
       <h3 className="resume-mobile-section-title">Education</h3>
-      <ResumeHeading
-        heading={"University of Toronto"}
-        subHeading={"Master of Science in Applied Computing — AI in Healthcare"}
-        fromDate={"Sep 2026"}
-        toDate={"Present"}
-      />
-      <ResumeHeading
-        heading={"University of Toronto"}
-        subHeading={
-          "Bachelor of Science in Bioinformatics and Computer Science (cGPA 3.85/4.00)"
-        }
-        fromDate={"Sep 2021"}
-        toDate={"Jun 2026"}
-      />
+      <div className="education-degrees">
+        <ResumeHeading
+          heading={"University of Toronto"}
+          subHeading={
+            "Master of Science in Applied Computing — AI in Healthcare"
+          }
+          fromDate={"Sep 2026"}
+          toDate={"Present"}
+        />
+        <ResumeHeading
+          heading={"University of Toronto"}
+          subHeading={
+            "Bachelor of Science in Bioinformatics and Computer Science (cGPA 3.85/4.00)"
+          }
+          fromDate={"Sep 2021"}
+          toDate={"Jun 2026"}
+        />
+      </div>
+      <a
+        className="academic-history-link"
+        href="2026%20oct%20Academic%20History%20-%20ACORN.pdf"
+        download="2026 oct Academic History - ACORN.pdf"
+      >
+        <button className="btn highlighted-btn" type="button">
+          Academic History
+        </button>
+      </a>
     </div>,
 
     <div className="resume-screen-container" key="awards">
