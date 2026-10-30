@@ -187,7 +187,7 @@ const Resume = (props) => {
         <ResumeHeading
           heading={"University of Toronto"}
           subHeading={
-            "Master of Science in Applied Computing — AI in Healthcare"
+            "Master of Science in Applied Computing, AI in Healthcare"
           }
           fromDate={"Sep 2026"}
           toDate={"Present"}
