@@ -223,7 +223,7 @@ const Resume = (props) => {
         href="2026%20oct%20Academic%20History%20-%20ACORN.pdf"
         download="2026 oct Academic History - ACORN.pdf"
       >
-        <button className="btn highlighted-btn" type="button">
+        <button className="btn primary-btn" type="button">
           Academic History
         </button>
       </a>

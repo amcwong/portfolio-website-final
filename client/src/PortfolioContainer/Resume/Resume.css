@@ -125,13 +125,6 @@
   margin-top: 0;
 }
 
-.academic-history-link .highlighted-btn {
-  width: auto;
-  min-width: 160px;
-  padding: 10px 18px;
-  z-index: 1;
-}
-
 .work-history-container {
   justify-content: flex-start;
   gap: 16px;
